@@ -1,4 +1,4 @@
-import CustomOrb from './CustomOrb'
+import Orb from './Orb'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
@@ -13,9 +13,10 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <CustomOrb 
           className="w-full h-full"
-          style={{
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          }}
+          hue = {0}
+          hoverIntensity = {0.3}
+          rotateOnHover = {true}
+          forceHoverState = {false}
         />
       </div>
       
