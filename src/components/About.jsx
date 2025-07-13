@@ -1,4 +1,4 @@
-import CustomOrb from './CustomOrb'
+import CustomOrb from './Orb'
 import { Target, Users, Lightbulb, Rocket } from 'lucide-react'
 
 const About = () => {
