@@ -6,32 +6,33 @@ import Dither from './Dither'
 const founders = [
   {
     id: 1,
-    name: "Sarah Chen",
+    name: "Park Jimin",
     title: "CEO & Co-Founder",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+    image: '/images/jimin.jpg',
     social: {
-      linkedin: "https://linkedin.com/in/sarahchen",
+      linkedin: "https://en.wikipedia.org/wiki/Park_Jimin"
     }
   },
   {
     id: 2,
-    name: "Marcus Rodriguez",
+    name: "A$AP Rocky",
     title: "CTO & Co-Founder",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    image: '/images/asap_rocky.jpg',
     social: {
-      linkedin: "https://linkedin.com/in/marcusrodriguez",
+      linkedin: "https://en.wikipedia.org/wiki/A%24AP_Rocky"
     }
   },
   {
     id: 3,
-    name: "Emily Watson",
+    name: "Stephen Curry",
     title: "Head of Design",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    image: '/images/steph_curry.jpg',
     social: {
-      linkedin: "https://linkedin.com/in/emilywatson",
+      linkedin: "https://en.wikipedia.org/wiki/Stephen_Curry"
     }
   }
 ]
+
 
 export default function Founders() {
   return (
@@ -46,7 +47,7 @@ export default function Founders() {
           colorNum={4}
           pixelSize={2}
           disableAnimation={false}
-          enableMouseInteraction={true}
+          enableMouseInteraction={false}
           mouseRadius={1}
         />
       </div>
