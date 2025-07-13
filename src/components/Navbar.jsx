@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
         {/* Logo */}
         <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          Chibay
+          chibay
         </h1>
 
         {/* Desktop Links */}

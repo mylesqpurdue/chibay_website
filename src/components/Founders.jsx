@@ -6,9 +6,9 @@ import Dither from './Dither'
 const founders = [
   {
     id: 1,
-    name: "Park Jimin",
+    name: "JungKook",
     title: "CEO & Co-Founder",
-    image: '/images/jimin.jpg',
+    image: 'images/jungkook.jpg',
     social: {
       linkedin: "https://en.wikipedia.org/wiki/Park_Jimin"
     }
@@ -17,7 +17,7 @@ const founders = [
     id: 2,
     name: "A$AP Rocky",
     title: "CTO & Co-Founder",
-    image: '/images/asap_rocky.jpg',
+    image: 'images/asap_rocky.jpg',
     social: {
       linkedin: "https://en.wikipedia.org/wiki/A%24AP_Rocky"
     }
@@ -26,7 +26,7 @@ const founders = [
     id: 3,
     name: "Stephen Curry",
     title: "Head of Design",
-    image: '/images/steph_curry.jpg',
+    image: 'images/steph_curry.jpg',
     social: {
       linkedin: "https://en.wikipedia.org/wiki/Stephen_Curry"
     }
