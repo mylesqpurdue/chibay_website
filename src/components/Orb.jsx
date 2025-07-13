@@ -8,6 +8,8 @@ export default function Orb({
   hoverIntensity = 0.2,
   rotateOnHover = true,
   forceHoverState = false,
+  className = "",
+  style = {},
 }) {
   const ctnDom = useRef(null);
 
@@ -280,5 +282,11 @@ export default function Orb({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hue, hoverIntensity, rotateOnHover, forceHoverState]);
 
-  return <div ref={ctnDom} className="orb-container" />;
+  return (
+  <div 
+    ref={ctnDom} 
+    className={`orb-container ${className}`} 
+    style = {style} 
+    />
+  );
 }

@@ -11,7 +11,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Orb Background */}
       <div className="absolute inset-0 z-0">
-        <CustomOrb 
+        <Orb 
           className="w-full h-full"
           hue = {0}
           hoverIntensity = {0.3}
