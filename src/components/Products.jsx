@@ -1,3 +1,4 @@
+// src/components/Products.jsx
 import { useState, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react'
@@ -7,13 +8,8 @@ const Products = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev()
-  }, [emblaApi])
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext()
-  }, [emblaApi])
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
 
   const products = [
     {
@@ -43,9 +39,11 @@ const Products = () => {
   ]
 
   return (
-    <section id="products" className="py-20 bg-gradient-to-br from-gray-900 to-purple-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="products" className="py-20 bg-transparent">
+
+      {/* 2) Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Our{' '}
@@ -59,7 +57,7 @@ const Products = () => {
           </p>
         </div>
 
-        {/* Carousel Container */}
+        {/* Carousel */}
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
@@ -67,7 +65,7 @@ const Products = () => {
                 <div key={product.id} className="flex-[0_0_100%] min-w-0 px-4">
                   <div className="group bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden hover:bg-white/15 transition-all duration-500 transform hover:scale-[1.02]">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                      {/* Image Section */}
+                      {/* Image */}
                       <div className="relative overflow-hidden">
                         <img
                           src={product.image}
@@ -77,34 +75,29 @@ const Products = () => {
                         <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-pink-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       </div>
 
-                      {/* Content Section */}
+                      {/* Details */}
                       <div className="p-8 lg:p-12 flex flex-col justify-center">
                         <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors duration-300">
                           {product.name}
                         </h3>
-                        
                         <p className="text-gray-300 text-lg leading-relaxed mb-6">
                           {product.description}
                         </p>
-
-                        {/* Features */}
                         <div className="mb-8">
                           <h4 className="text-sm font-semibold text-purple-300 mb-3 uppercase tracking-wider">
                             Key Features
                           </h4>
                           <div className="flex flex-wrap gap-2">
-                            {product.features.map((feature, idx) => (
+                            {product.features.map((f, idx) => (
                               <span
                                 key={idx}
                                 className="px-3 py-1 bg-purple-500/20 text-purple-200 rounded-full text-sm border border-purple-400/30"
                               >
-                                {feature}
+                                {f}
                               </span>
                             ))}
                           </div>
                         </div>
-
-                        {/* CTA Button */}
                         <Button
                           className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 rounded-full px-6 py-3 font-semibold transition-all duration-300 transform hover:scale-105 w-fit"
                         >
@@ -119,14 +112,13 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Prev/Next */}
           <button
             onClick={scrollPrev}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full border border-white/20 transition-all duration-300 hover:scale-110"
           >
             <ChevronLeft size={24} />
           </button>
-          
           <button
             onClick={scrollNext}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full border border-white/20 transition-all duration-300 hover:scale-110"
@@ -134,17 +126,17 @@ const Products = () => {
             <ChevronRight size={24} />
           </button>
 
-          {/* Dots Indicator */}
+          {/* Dots */}
           <div className="flex justify-center mt-8 space-x-2">
-            {products.map((_, index) => (
+            {products.map((_, idx) => (
               <button
-                key={index}
+                key={idx}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === selectedIndex
+                  idx === selectedIndex
                     ? 'bg-purple-400 scale-125'
                     : 'bg-white/30 hover:bg-white/50'
                 }`}
-                onClick={() => emblaApi?.scrollTo(index)}
+                onClick={() => emblaApi?.scrollTo(idx)}
               />
             ))}
           </div>
@@ -155,4 +147,3 @@ const Products = () => {
 }
 
 export default Products
-

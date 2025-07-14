@@ -26,14 +26,14 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section id="founders" className="py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             About{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Chibay
+              chibay
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

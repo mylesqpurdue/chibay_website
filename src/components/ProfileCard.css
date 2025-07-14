@@ -186,9 +186,12 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%) scale(1);
-  bottom: 2px;
+  bottom: 10px;                 /* nudge it up */
+  object-fit: cover;
+  object-position: center 40%;  /* fine-tune vertical crop */
   opacity: calc(1.75 - var(--pointer-from-center));
 }
+
 
 .pc-avatar-content::before {
   content: "";

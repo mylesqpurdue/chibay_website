@@ -1,7 +1,7 @@
 // src/components/Founders.jsx
 import React from 'react'
 import ProfileCard from './ProfileCard'
-import Dither from './Dither'
+
 
 const founders = [
   {
@@ -37,21 +37,6 @@ const founders = [
 export default function Founders() {
   return (
     <section id="founders" className="relative py-20">
-      {/* 1) Dither background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Dither
-          waveSpeed={0.05}
-          waveFrequency={3}
-          waveAmplitude={0.3}
-          waveColor={[0.5, 0.5, 0.5]}
-          colorNum={4}
-          pixelSize={2}
-          disableAnimation={false}
-          enableMouseInteraction={false}
-          mouseRadius={1}
-        />
-      </div>
-
       {/* 2) Content on top */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
